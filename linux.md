@@ -94,7 +94,7 @@ ipython
 ```
 
 ```python3
-from pandas import pd
+import pandas as pd
 df = pd.read_csv('affairs.txt')
 ```
 
