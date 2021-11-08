@@ -209,7 +209,7 @@ from affairs.affairs import read_file
 
 df = read_file()
 arg = int(sys.argv[1])
-print(df.iloc[1])
+print(df.iloc[arg])
 
 # 输入内容
 python3 test6.py 10
