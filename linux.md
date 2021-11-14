@@ -224,3 +224,173 @@ affairs           0.0
 Name: 1, dtype: float64
 ```
 
+
+
+**任务7：在Linux系统中后台运行应用程序，并打印日志**
+
+任务要点：程序后台运行，进程管理
+
+- 步骤1：在/home/coggle目录下在你英文昵称（中间不要有空格哦）的文件夹中创建一个sleep.py文件，该文件需要完成以下功能：
+
+  - 程序一直运行
+  - 每10秒输出当前时间
+
+```python
+import time
+
+while True:
+    print(time.ctime())
+    time.sleep(10)
+```
+
+- 步骤2：学习 & 和 nohup后台执行的方法
+
+https://blog.csdn.net/a736933735/article/details/89577557
+
+http://ipcmen.com/jobs
+
+```sh
+# 后台运行程序，关闭shell后任务也跟着停止。
+python3 sleepy.py &
+
+# 不挂断的运行程序，终端不再接受任何输入，重定向标准输出和错误到nohup.out文件
+# python3 -u Force stdin, stdout and stderr to be totally unbuffered.
+nohup python3 -u sleepy.py
+
+# 不挂断的运行程序，终端可以接受输入，重定向标准输出和错误到nohup.out文件
+nohup python3 -u sleepy.py &
+```
+
+- 步骤3：学习tmux的使用，将步骤1的程序进行后台运行，并将输出结果写入到txt文件。
+
+```sh
+# 进入tmux
+tmux
+
+# 新建tmux对话
+tmux new -t sleepy
+
+# 后台运行程序，将输出结果写入到output.txt文件中
+nohup python3 -u sleepy.py > output.txt 2>&1 &
+```
+
+
+
+**任务8：使用grep和awk从文件中筛选字符串**
+
+任务要点：字符筛选
+
+- 步骤1：下载周杰伦歌词文本，并进行解压。
+
+https://mirror.coggle.club/dataset/jaychou_lyrics.txt.zip
+
+```sh
+wget https://mirror.coggle.club/dataset/jaychou_lyrics.txt.zip
+unzip jaychou_lyrics.txt.zip
+rm jaychou_lyrics.txt.zip
+```
+
+- 步骤2：利用grep命令完成以下操作，并输出到屏幕
+
+https://blog.csdn.net/baidu_41388533/article/details/107610827
+
+https://www.runoob.com/linux/linux-comm-grep.html
+
+```sh
+# 统计歌词中 包含【超人】的歌词
+grep '超人' jaychou_lyrics.txt
+grep '超人' jaychou_lyrics.txt | wc -l #5
+
+> output:
+如果超人会飞 那就让我在空中停一停歇
+不要问我哭过了没 因為超人不能流眼泪
+只能说当超人真的好难
+如果超人会飞 那就让我在空中停一停歇
+不要问我哭过了没 因為超人不能流眼泪
+
+# 统计歌词中 包含【外婆】但不包含【期待】的歌词
+grep '外婆' jaychou_lyrics.txt | grep -v '期待'
+grep '外婆' jaychou_lyrics.txt | grep -v '期待' | wc -l #14
+> output:
+我想带你 回我的外婆家
+我想带你 回我的外婆家
+今天是外婆生日
+载着外婆开着拉风的古董车兜兜兜风
+外婆她脸上的涟漪
+外婆她的无奈
+记得去年外婆的生日
+表哥带我和外婆参加
+是因为看到外婆失落而失落
+我告诉外婆 我没输 不需要改变
+只要外婆觉得好听
+外婆露出了笑容 说她以我为荣
+外婆她的无奈
+外婆她的无奈
+
+# 统计歌词中 以【我】开头的歌词
+grep '^我' jaychou_lyrics.txt | wc -l #768
+
+# 统计歌词中 以【我】结尾的歌词
+grep '我$' jaychou_lyrics.txt | wc -l #118
+
+```
+
+- 步骤3：利用sed命令完成以下操作，并输出到屏幕
+
+https://www.cnblogs.com/JohnLiang/p/6202962.html
+
+```sh
+# 将歌词中 第2行 至 第40行 删除
+sed '2,40d' jaychou_lyrics.txt
+
+# 将歌词中 所有【我】替换成【你】
+sed -i 's/我/你/g' jaychou_lyrics.txt
+```
+
+
+
+**任务9：在目录下创建zip和tar压缩文件，并进行解压**
+
+任务要点：文件压缩
+
+https://www.cnblogs.com/wxlf/p/8117602.html
+
+```sh
+# 步骤1：在/home/coggle目录下在你英文昵称（中间不要有空格哦）的文件夹中，下载https://mirror.coggle.club/dataset/jaychou_lyrics.txt.zip
+wget https://mirror.coggle.club/dataset/jaychou_lyrics.txt.zip
+
+# 步骤2：使用zip 压缩/home/coggle目录下在你英文昵称（中间不要有空格哦）的文件夹
+zip kuan kuan.zip
+
+# 将步骤3：步骤3：将 /home/coggle目录下在你英文昵称（中间不要有空格哦）的文件夹，打包为tar格式。
+tar -zcvf kuan.tar kuan
+
+# 步骤4：将 /home/coggle目录下在你英文昵称（中间不要有空格哦）的文件夹，打包为tar.gz格式。
+gzip kuan.tar
+# tar -zcvf kuan.tar.gz kuan
+```
+
+
+
+**任务10：使用find和locate定位文件**
+
+任务要点：文件搜索
+
+https://www.runoob.com/linux/linux-comm-find.html
+
+https://www.cnblogs.com/linjiqin/p/11678012.html
+
+```sh
+# 步骤1：使用find统计文件系统中以py为后缀名的文件个数
+find / -name '*.py' | wc -l #11355
+
+# 步骤2：使用find寻找/home/文件夹下文件内容包含coggle的文件
+find /home/ -type f | xargs grep 'coggle'
+find /home/ -type f | xargs grep 'coggle' | wc -l #97
+
+# 步骤3：时候用locate寻找到python3.preinst文件
+locate python3.preinst
+> /var/lib/dpkg/info/python3.preinst
+
+```
+

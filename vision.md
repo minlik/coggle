@@ -116,3 +116,63 @@ nn.Conv2d(
   - https://blog.csdn.net/shanglianlm/article/details/85313924
 
 - 步骤2：学习归一化的原理，https://blog.csdn.net/qq_23981335/article/details/106572171
+
+
+
+**任务8：使用PyTorch搭建VGG网络**
+
+任务要点：网络搭建
+
+https://zhuanlan.zhihu.com/p/263527295
+
+- 步骤1：理解VGG网络的原理。
+
+- 步骤2：使用pytorch搭建VGG网络模型。
+
+- 步骤3：打印出VGG 11层模型 每层特征图的尺寸，以及参数量。
+
+
+
+**任务9：使用PyTorch搭建ResNet网络**
+
+任务要点：网络搭建
+
+https://zhuanlan.zhihu.com/p/263526658
+
+- 步骤1：理解ResNet网络的原理。
+
+- 步骤2：使用pytorch搭建ResNet网络模型。
+
+- 步骤3：打印出ResNet 18模型 每层特征图的尺寸，以及参数量。
+
+
+
+**任务10：使用PyTorch完成Fashion-MNIST分类**
+
+[https://github.com/masoudrostami/Fashion-MNIST-using-PyTorch/blob/main/MNIST%20Fashion%20Project.ipynb](https://github.com/masoudrostami/Fashion-MNIST-using-PyTorch/blob/main/MNIST Fashion Project.ipynb)
+
+- 步骤1：搭建4层卷积 + 2层全连接的分类模型。
+
+- 步骤2：在训练过程中记录下每个epoch的训练集精度和测试集精度。
+
+
+
+**任务11：使用PyTorch完成人脸关键点检测**
+
+数据集：[https://ai-contest-static.xfyun.cn/2021/7afa865e-5ac8-48ab-9966-d88bb33cdc15/%E4%BA%BA%E8%84%B8%E5%85%B3%E9%94%AE%E7%82%B9%E6%A3%80%E6%B5%8B%E6%8C%91%E6%88%98%E8%B5%9B_%E6%95%B0%E6%8D%AE%E9%9B%86.zip](https://ai-contest-static.xfyun.cn/2021/7afa865e-5ac8-48ab-9966-d88bb33cdc15/人脸关键点检测挑战赛_数据集.zip)
+
+[https://gitee.com/coggle/competition-baseline/blob/master/competition/%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9EAI%E5%BC%80%E5%8F%91%E8%80%85%E5%A4%A7%E8%B5%9B2021/%E4%BA%BA%E8%84%B8%E5%85%B3%E9%94%AE%E7%82%B9%E6%A3%80%E6%B5%8B%E6%8C%91%E6%88%98%E8%B5%9B/face-keypoint2.ipynb](https://gitee.com/coggle/competition-baseline/blob/master/competition/科大讯飞AI开发者大赛2021/人脸关键点检测挑战赛/face-keypoint2.ipynb)
+
+- 步骤1：搭建4层卷积 + 2层的模型完成关键点回归。
+
+- 步骤2：使用resnet18预训练模型完成关键点回归。
+
+
+
+**任务12：使用PyTorch搭建对抗生成网络**
+
+- 步骤1：学习对抗生成网络的原理，https://blog.csdn.net/DFCED/article/details/105175097
+
+- 步骤2：学习DCGAN的代码实现，https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html
+
+- 步骤3：使用任务11中的人脸数据（缩放至64*64），并使用DCGAN完成训练，生成人脸。
