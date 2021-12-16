@@ -141,7 +141,7 @@ https://shimo.im/docs/dqiwqt0T7fwl8Day/read
 
 [https://queirozf.com/entries/pandas-dataframes-merge-join-examples](https://queirozf.com/entries/pandas-dataframes-merge-join-examples?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2Mzk2MjczODIsImciOiJkcWl3cXQwVDdmd2w4RGF5IiwiaWF0IjoxNjM5NjI3MDgyLCJ1c2VySWQiOjM5MzI4OTU2fQ.iTOAuQqWr7pBIFiEHj2-8-avQ8zN0IegnF9yQg3EYkA)
 
-![merge](/home/kuan/Desktop/coggle/12月/merge.png)
+![merge](merge.png)
 
 任务要点：merge、join
 
@@ -181,7 +181,7 @@ data3 = pd.DataFrame({"ID":range(102, 110),
 
 [https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html](https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2Mzk2MjczODIsImciOiJkcWl3cXQwVDdmd2w4RGF5IiwiaWF0IjoxNjM5NjI3MDgyLCJ1c2VySWQiOjM5MzI4OTU2fQ.iTOAuQqWr7pBIFiEHj2-8-avQ8zN0IegnF9yQg3EYkA)
 
-![pivot](/home/kuan/Desktop/coggle/12月/pivot.png)
+![pivot](pivot.png)
 
 - 步骤1：读取文件[https://cdn.coggle.club/Pokemon.csv](https://cdn.coggle.club/Pokemon.csv?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2Mzk2MjczODIsImciOiJkcWl3cXQwVDdmd2w4RGF5IiwiaWF0IjoxNjM5NjI3MDgyLCJ1c2VySWQiOjM5MzI4OTU2fQ.iTOAuQqWr7pBIFiEHj2-8-avQ8zN0IegnF9yQg3EYkA)
 
